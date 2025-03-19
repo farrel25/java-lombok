@@ -1,10 +1,10 @@
 package com.farrel.lombok;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
+@NoArgsConstructor(staticName = "getInstance")
+@AllArgsConstructor(staticName = "getInstance")
 public class Login {
 
     @Setter(value = AccessLevel.PROTECTED)

@@ -1,8 +1,10 @@
 package com.farrel.lombok;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+@Slf4j
 class LoginTest {
 
     @Test
@@ -14,5 +16,11 @@ class LoginTest {
         Assertions.assertNull(login.getPassword());
         Assertions.assertEquals("farrel", login2.getUsername());
         Assertions.assertEquals("secret", login2.getPassword());
+    }
+
+    @Test
+    void testToString() {
+        Login login = Login.getInstance("farrel", "secret");
+        Assertions.assertEquals("Login(username=farrel)", login.toString());
     }
 }

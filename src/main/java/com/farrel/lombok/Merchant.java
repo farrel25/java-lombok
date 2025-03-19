@@ -9,7 +9,8 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class Merchant {
 
-    private final Long id;
+    //private final Long id;
+    private Long id;
 
     private String name;
 }

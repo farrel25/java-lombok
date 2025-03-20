@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
 
@@ -76,7 +73,6 @@ class PersonTest {
         Assertions.assertEquals("Farrel", farrel.getName());
         Assertions.assertEquals(25, farrel.getAge());
         Assertions.assertEquals(5, farrel.getHobbies().size());
-        //Assertions.assertSame(hobbies, farrel.getHobbies());
         Assertions.assertArrayEquals(new List[]{hobbies}, new List[]{farrel.getHobbies()});
         Assertions.assertArrayEquals(hobbies.toArray(new String[0]), farrel.getHobbies().toArray(new String[0]));
     }
@@ -105,7 +101,6 @@ class PersonTest {
         Assertions.assertEquals("Farrel", farrel.getName());
         Assertions.assertEquals(25, farrel.getAge());
         Assertions.assertEquals(5, farrel.getHobbies().size());
-        //Assertions.assertSame(hobbies, farrel.getHobbies());
         Assertions.assertArrayEquals(new List[]{hobbies}, new List[]{farrel.getHobbies()});
         Assertions.assertArrayEquals(hobbies.toArray(new String[0]), farrel.getHobbies().toArray(new String[0]));
     }

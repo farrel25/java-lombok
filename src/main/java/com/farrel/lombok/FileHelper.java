@@ -1,6 +1,7 @@
 package com.farrel.lombok;
 
 import lombok.Cleanup;
+import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,4 +71,9 @@ public class FileHelper {
 
         return stringBuilder.toString();
     }
+
+//    @SneakyThrows(value = {IOException.class})
+//    public static String readFileCleanUpWithNoCheckedException(String fileName) {
+//        return readFileCleanUp(fileName);
+//    }
 }

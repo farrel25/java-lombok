@@ -2,6 +2,7 @@ package com.farrel.lombok;
 
 import lombok.Cleanup;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,9 +11,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+@Slf4j
 public class FileHelper {
 
-    private static final Logger log = LoggerFactory.getLogger(FileHelper.class);
+//    private static final Logger log = LoggerFactory.getLogger(FileHelper.class);
 
     public static String readFileManualClose(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -61,6 +63,7 @@ public class FileHelper {
     }
 
     public static String readFileCleanUp(String fileName) throws IOException {
+        log.info("Reading file {}", fileName);
         @Cleanup FileReader fileReader = new FileReader(fileName);
         @Cleanup Scanner scanner = new Scanner(fileReader);
 
@@ -72,8 +75,8 @@ public class FileHelper {
         return stringBuilder.toString();
     }
 
-//    @SneakyThrows(value = {IOException.class})
-//    public static String readFileCleanUpWithNoCheckedException(String fileName) {
-//        return readFileCleanUp(fileName);
-//    }
+    @SneakyThrows
+    public static String readFileCleanUpWithNoCheckedException(String fileName) {
+        return readFileCleanUp(fileName);
+    }
 }

@@ -11,8 +11,8 @@ import lombok.ToString;
 @ToString(exclude = {"price"})
 public class Product {
 
-    //private final Long id;
-    private Long id;
+    private final Long id;
+//    private Long id;
 
     private String name;
 
